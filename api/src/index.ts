@@ -2,7 +2,7 @@ import Fastify, { FastifyInstance } from "fastify";
 import { CustomLogger, LoggerPlugin } from "./plugin/logger";
 import { ConfigPlugin } from "./plugin/config";
 import { MirkoPlugin } from "./plugin/mikro";
-import { StatusRouter, EmbeddingRouter } from "./services";
+import { StatusRouter, EmbeddingRouter, EmbeddingSaga } from "./services";
 
 async function server() {
   const fastify: FastifyInstance = Fastify({
@@ -20,6 +20,9 @@ async function server() {
 
   try {
     await fastify.ready();
+
+    // Register sagas
+    new EmbeddingSaga(fastify);
   } catch (e) {
     fastify.log.fatal(`Unable to initialize plugins due to ${e}`);
     process.exit(1);
