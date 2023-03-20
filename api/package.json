@@ -1,0 +1,26 @@
+{
+  "name": "ai-poc-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "author": "jm-avila",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/env": "^4.2.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.15.0",
+    "fastify-plugin": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
