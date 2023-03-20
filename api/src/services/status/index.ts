@@ -1,2 +1,2 @@
-export * from "./controller/status";
+export * from "./controller";
 export * from "./routes";
