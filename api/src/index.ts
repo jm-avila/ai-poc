@@ -2,7 +2,7 @@ import Fastify, { FastifyInstance } from "fastify";
 import { CustomLogger, LoggerPlugin } from "./plugin/logger";
 import { ConfigPlugin } from "./plugin/config";
 import { MirkoPlugin } from "./plugin/mikro";
-import { StatusRouter } from "./services";
+import { StatusRouter, EmbeddingRouter } from "./services";
 
 async function server() {
   const fastify: FastifyInstance = Fastify({
@@ -16,6 +16,7 @@ async function server() {
 
   // Register routes
   fastify.register(StatusRouter);
+  fastify.register(EmbeddingRouter);
 
   try {
     await fastify.ready();
