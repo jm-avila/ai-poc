@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from "fastify";
 import { CustomLogger, LoggerPlugin } from "./plugin/logger";
 import { ConfigPlugin } from "./plugin/config";
+import { MirkoPlugin } from "./plugin/mikro";
 import { StatusRouter } from "./services";
 
 async function server() {
@@ -11,6 +12,7 @@ async function server() {
   // Register plugins
   fastify.register(ConfigPlugin);
   fastify.register(LoggerPlugin);
+  fastify.register(MirkoPlugin);
 
   // Register routes
   fastify.register(StatusRouter);
