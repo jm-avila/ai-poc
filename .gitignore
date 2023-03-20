@@ -4,3 +4,6 @@
 
 # Environment
 /*/.env
+
+# Testing
+/*/coverage
