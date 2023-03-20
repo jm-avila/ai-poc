@@ -58,8 +58,8 @@ const options = {
       driver: process.env.LOG_DRIVER,
     },
     supabase: {
-      key: process.env.SUPABASE_KEY,
-      url: process.env.SUPABASE_URL,
+      key: process.env.SUPABASE_PROJECT_API_KEY,
+      url: process.env.SUPABASE_DB_URL,
     },
     openAi: {
       key: process.env.OPENAI_KEY,
